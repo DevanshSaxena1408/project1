@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030014;
+  --foreground: #ededed;
+  --accent-blue: #4fc3f7;
+  --accent-purple: #b388ff;
+  --accent-pink: #f48fb1;
+  --accent-cyan: #00e5ff;
+  --accent-orange: #ffab40;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
@@ -12,15 +19,372 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--foreground);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  cursor: none;
+}
+
+::selection {
+  background: rgba(79, 195, 247, 0.3);
+  color: #fff;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4fc3f7, #b388ff);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #4fc3f7, #f48fb1); }
+
+/* ======================== */
+/* Glass morphism            */
+/* ======================== */
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: rgba(8, 5, 30, 0.7);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ======================== */
+/* Speech bubble             */
+/* ======================== */
+
+.speech-bubble {
+  background: rgba(8, 5, 30, 0.85);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(79, 195, 247, 0.2);
+  border-radius: 16px;
+  padding: 14px 18px;
+  box-shadow: 0 4px 30px rgba(79, 195, 247, 0.08), 0 0 1px rgba(179, 136, 255, 0.3);
+}
+
+/* ======================== */
+/* Text effects              */
+/* ======================== */
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(79, 195, 247, 0.5), 0 0 40px rgba(79, 195, 247, 0.3);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ======================== */
+/* Animated gradient border  */
+/* ======================== */
+
+.gradient-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #4fc3f7, #b388ff, #f48fb1, #4fc3f7);
+  background-size: 300% 300%;
+  animation: gradient-rotate 6s linear infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ======================== */
+/* 3D tilt card              */
+/* ======================== */
+
+.tilt-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.3s ease;
+}
+
+.tilt-card:hover {
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+}
+
+.tilt-card-inner {
+  transform: translateZ(20px);
+}
+
+/* ======================== */
+/* Animations                */
+/* ======================== */
+
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+@keyframes pulse-glow { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+@keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+/* ======================== */
+/* Shooting Stars            */
+/* ======================== */
+
+.shooting-stars-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+@keyframes shooting-star {
+  0% { transform: translateX(-80px) translateY(-80px) rotate(-45deg); opacity: 0; }
+  3% { opacity: 1; }
+  12% { opacity: 0; transform: translateX(calc(100vw + 150px)) translateY(calc(100vh + 150px)) rotate(-45deg); }
+  100% { opacity: 0; transform: translateX(calc(100vw + 150px)) translateY(calc(100vh + 150px)) rotate(-45deg); }
+}
+
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(79, 195, 247, 0.7), rgba(179, 136, 255, 0.5), transparent);
+  border-radius: 100px;
+}
+
+.shooting-star::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -1.5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 6px 2px rgba(79, 195, 247, 0.6);
+}
+
+.shooting-star-1 { top: 12%; left: 8%; animation: shooting-star 9s linear infinite; }
+.shooting-star-2 { top: 30%; left: 20%; animation: shooting-star 13s linear infinite 3.5s; width: 70px; }
+.shooting-star-3 { top: 50%; left: 3%; animation: shooting-star 11s linear infinite 7s; width: 85px; }
+.shooting-star-4 { top: 22%; left: 45%; animation: shooting-star 15s linear infinite 10s; width: 55px; }
+.shooting-star-5 { top: 68%; left: 12%; animation: shooting-star 12s linear infinite 5s; width: 75px; }
+
+/* ======================== */
+/* Section ambient glows     */
+/* ======================== */
+
+.section-ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.35;
+}
+
+.section-ambient-blue {
+  background:
+    radial-gradient(ellipse 50% 35% at 15% 50%, rgba(79, 195, 247, 0.08), transparent 70%),
+    radial-gradient(ellipse 25% 25% at 85% 80%, rgba(79, 195, 247, 0.03), transparent 60%);
+}
+.section-ambient-orange {
+  background:
+    radial-gradient(ellipse 50% 35% at 85% 50%, rgba(255, 112, 67, 0.06), transparent 70%),
+    radial-gradient(ellipse 25% 25% at 15% 20%, rgba(255, 112, 67, 0.03), transparent 60%);
+}
+.section-ambient-gold {
+  background:
+    radial-gradient(ellipse 50% 35% at 15% 50%, rgba(255, 171, 64, 0.06), transparent 70%),
+    radial-gradient(ellipse 25% 25% at 85% 20%, rgba(255, 171, 64, 0.03), transparent 60%);
+}
+.section-ambient-purple {
+  background:
+    radial-gradient(ellipse 50% 35% at 85% 50%, rgba(179, 136, 255, 0.06), transparent 70%),
+    radial-gradient(ellipse 25% 25% at 15% 80%, rgba(179, 136, 255, 0.03), transparent 60%);
+}
+.section-ambient-silver {
+  background:
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(224, 224, 224, 0.04), transparent 70%);
+}
+
+/* ======================== */
+/* Scroll progress           */
+/* ======================== */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4fc3f7, #b388ff, #f48fb1);
+  z-index: 9999;
+  transform-origin: left;
+  transition: transform 0.1s linear;
+}
+
+/* ======================== */
+/* Floating tech icons       */
+/* ======================== */
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(3deg); }
+  66% { transform: translateY(-5px) rotate(-2deg); }
+}
+
+.float-icon {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+/* ======================== */
+/* Magnetic hover            */
+/* ======================== */
+
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ======================== */
+/* Section divider           */
+/* ======================== */
+
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79, 195, 247, 0.15), rgba(179, 136, 255, 0.15), transparent);
+  margin: 0 auto;
+}
+
+/* ======================== */
+/* Responsive                */
+/* ======================== */
+
+@media (max-width: 768px) {
+  body { cursor: auto; }
+}
+
+/* ======================== */
+/* Code editor panel style   */
+/* ======================== */
+
+.code-panel {
+  background: rgba(8, 5, 30, 0.85);
+  border: 1px solid rgba(79, 195, 247, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.code-panel-header {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 6px;
+}
+
+.code-panel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.code-panel-dot-red { background: #ff5f57; }
+.code-panel-dot-yellow { background: #febc2e; }
+.code-panel-dot-green { background: #28c840; }
+
+/* ======================== */
+/* Dev console text glow     */
+/* ======================== */
+
+.dev-glow {
+  text-shadow:
+    0 0 5px currentColor,
+    0 0 20px rgba(79, 195, 247, 0.2);
+}
+
+/* ======================== */
+/* Line numbers sidebar      */
+/* ======================== */
+
+.line-numbers {
+  counter-reset: line;
+}
+
+.line-numbers > * {
+  counter-increment: line;
+}
+
+.line-numbers > *::before {
+  content: counter(line);
+  display: inline-block;
+  width: 2em;
+  margin-right: 1em;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.1);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+}
+
+/* ======================== */
+/* Smooth section transitions */
+/* ======================== */
+
+section {
+  will-change: transform, opacity;
+}
+
+/* ======================== */
+/* Enhanced card hover       */
+/* ======================== */
+
+.glass:hover {
+  border-color: rgba(79, 195, 247, 0.12);
+}
+
+.glass-strong:hover {
+  border-color: rgba(79, 195, 247, 0.15);
+  box-shadow: 0 0 40px rgba(79, 195, 247, 0.05);
 }

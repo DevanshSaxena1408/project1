@@ -1,0 +1,332 @@
+# 🚀 PROJECT DOCUMENTATION
+
+## Mission Devansh: AI Space Portfolio
+
+---
+
+# 🌌 1. PROJECT OVERVIEW
+
+This project is a **3D interactive portfolio website** designed as a **space exploration experience** where users navigate through planets representing different aspects of Devansh’s profile.
+
+The goal is to create:
+
+* A **visually stunning 3D experience**
+* A **recruiter-friendly navigation system**
+* A **memorable and unique portfolio**
+
+---
+
+# 🎯 2. OBJECTIVES
+
+* Impress recruiters within 5–10 seconds
+* Showcase AI, Full Stack, and Android skills
+* Demonstrate creativity + technical depth
+* Maintain usability despite complex visuals
+
+---
+
+# 🧠 3. CORE CONCEPT
+
+User enters a **space environment** guided by an **astronaut AI assistant**.
+
+There are **3 main navigation paths**:
+
+1. Explore Work (Projects)
+2. Know Me (Skills + Experience)
+3. Hire Me (Contact + Resume)
+
+Each section is represented by a **3D planet**.
+
+---
+
+# 🪐 4. PLANET STRUCTURE
+
+## Planet Mapping
+
+* Mars → Work Experience
+* Saturn → Projects
+* Neptune → Skills
+* Earth → About Me
+* Moon → Contact / Hire Me
+
+---
+
+# 🎬 5. USER FLOW
+
+## Entry Flow
+
+1. Black screen
+2. Stars appear
+3. Astronaut appears
+4. Intro text:
+   "Hi, I’m Devansh — AI Engineer, Builder, Founder."
+
+Buttons:
+
+* Start Mission
+* Quick View
+
+---
+
+## Navigation Flow
+
+### Mode 1: Quick Mode (Default)
+
+* Simple UI buttons
+* Fast navigation
+
+### Mode 2: Explore Mode
+
+* Full 3D interaction
+* Click planets to navigate
+
+---
+
+## Interaction Flow
+
+* Hover on planet → glow + rotation
+* Click planet → camera zoom animation
+* Open panel with content
+
+---
+
+# 🤖 6. ASTRONAUT GUIDE SYSTEM
+
+## Features
+
+* Acts as AI assistant
+* Guides user through sections
+* Explains projects and experience
+
+## Capabilities
+
+* Text-based chatbot
+* Context-aware responses
+* Suggest navigation
+
+## Example
+
+User clicks Medicare project:
+→ Astronaut explains:
+"AI-powered healthcare platform with LLM chatbot and real-time consultation system"
+
+---
+
+# ⚡ 7. ANIMATION SYSTEM
+
+## Required Animations
+
+* Camera zoom into planets
+* Orbit movement
+* Fade + blur transitions
+* Hover micro-interactions
+
+## Tools
+
+* GSAP (ScrollTrigger + Timeline)
+* React Three Fiber animations
+
+---
+
+# 🎮 8. GAME ELEMENTS (OPTIONAL BUT RECOMMENDED)
+
+* Missions:
+
+  * Explore AI Project
+  * View Experience
+* Achievements:
+
+  * Viewed Nokia Work
+* Explore mode toggle
+
+---
+
+# 🧩 9. UI DESIGN
+
+## Style
+
+* Dark theme
+* Space + AI hybrid
+* Glassmorphism panels
+* Neon highlights
+
+## UI Components
+
+* Navbar
+* Floating action buttons
+* Info panels
+* Chat assistant UI
+
+---
+
+# 🧠 10. CONTENT STRUCTURE
+
+## About
+
+* Intro
+* Education
+* Founder story
+
+## Skills
+
+* AI / LLM / RAG
+* Web Development
+* Android Development
+* Cloud
+
+## Experience
+
+* Nokia (AI Developer)
+* Intel Unnati
+* Pixadora (Founder)
+* NayePankh Foundation
+
+## Projects
+
+* Medicare
+* DevMatch
+* RideEase
+* MindfulVista
+
+## Contact
+
+* Email
+* LinkedIn
+* GitHub
+
+---
+
+# ⚙️ 11. TECH STACK
+
+## Frontend
+
+* Next.js
+* Tailwind CSS
+
+## 3D
+
+* Three.js
+* React Three Fiber
+* Drei
+
+## Animation
+
+* GSAP
+* Framer Motion
+
+## AI Integration
+
+* OpenAI API / Gemini API
+
+---
+
+# 🧩 12. FOLDER STRUCTURE
+
+src/
+├── components/
+│   ├── AstronautGuide
+│   ├── Planet
+│   ├── UIOverlay
+│   ├── Navbar
+│
+├── scenes/
+│   ├── SpaceScene
+│   ├── PlanetScene
+│
+├── animations/
+│   ├── cameraTransitions.js
+│
+├── ai/
+│   ├── chatbot.js
+│
+├── data/
+│   ├── content.json
+│
+├── pages/
+│   ├── index.js
+
+---
+
+# 🚀 13. PERFORMANCE OPTIMIZATION
+
+* Use low-poly 3D models
+* Lazy load scenes
+* Compress textures
+* Limit number of active animations
+* Use suspense/loading fallback
+
+---
+
+# 🚫 14. CONSTRAINTS
+
+* Must work on mid-range devices
+* Must not exceed 3–5 second load time
+* Must have fallback for mobile (2D version)
+
+---
+
+# 💣 15. ADVANCED FEATURES (OPTIONAL)
+
+* AI resume explainer
+* Voice interaction
+* Auto demo mode
+* Theme switcher (space / cyberpunk)
+* Live GitHub stats
+
+---
+
+# 🧠 16. FINAL EXPERIENCE GOAL
+
+The website should feel like:
+
+* A product demo
+* A cinematic experience
+* A personal AI assistant
+
+User should leave with:
+"This is the most impressive portfolio I’ve seen."
+
+---
+
+# ✅ 17. DEVELOPMENT PHASES
+
+## Phase 1
+
+* Setup project
+* Basic UI
+* Static content
+
+## Phase 2
+
+* Add 3D scene
+* Planet navigation
+
+## Phase 3
+
+* Add animations (GSAP)
+
+## Phase 4
+
+* Add astronaut guide
+
+## Phase 5
+
+* Add AI chatbot
+
+## Phase 6
+
+* Optimize performance
+
+---
+
+# 🎯 FINAL NOTE
+
+Focus on:
+
+* Smoothness > complexity
+* Clarity > overload
+* Experience > content dump
+
+---
+
+END OF DOCUMENT

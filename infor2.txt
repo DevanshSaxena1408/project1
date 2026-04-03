@@ -1,0 +1,395 @@
+# 🚀 PROJECT SPECIFICATION
+
+## “MISSION DEVANSH” – 3D AI SPACE PORTFOLIO
+
+---
+
+# 🌌 1. PROJECT VISION
+
+Build a **highly interactive 3D portfolio website** where the user explores a **space-themed universe** guided by a **cute astronaut character (Devansh avatar)**.
+
+The website should feel like:
+
+* A cinematic experience 🎬
+* A game 🎮
+* A product demo 🚀
+
+The goal is to create:
+
+* Maximum **visual impact**
+* Strong **technical impression**
+* Smooth **user experience**
+
+---
+
+# 🎯 2. CORE EXPERIENCE
+
+User lands on website → enters space → guided by astronaut → explores planets → learns about Devansh.
+
+---
+
+# 🧠 3. EXPERIENCE PRINCIPLES
+
+1. Smooth > flashy
+2. Simple navigation > complex interactions
+3. Storytelling > static sections
+4. Performance > heavy visuals
+
+---
+
+# 🎬 4. ENTRY EXPERIENCE (CRITICAL)
+
+## Scene:
+
+* Dark space background
+* Stars slowly animate
+* Cute astronaut boy floats into view
+
+## Text:
+
+“Hi, I’m Devansh — AI Engineer, Builder, Founder.”
+
+## Buttons:
+
+* 🚀 Start Mission
+* ⚡ Quick View (recruiter mode)
+
+---
+
+# 🧭 5. NAVIGATION SYSTEM
+
+## Dual Mode Navigation
+
+### Mode 1: Quick Mode (Default)
+
+* Simple UI overlay (top navbar)
+* Sections:
+
+  * About
+  * Skills
+  * Projects
+  * Experience
+  * Contact
+
+### Mode 2: Explore Mode
+
+* Full 3D interaction
+* Click planets to navigate
+
+---
+
+# 🪐 6. PLANET ARCHITECTURE
+
+Each planet represents a section.
+
+## Planets Mapping
+
+* Earth → About Me
+* Mars → Work Experience
+* Saturn → Projects
+* Neptune → Skills
+* Moon → Contact
+
+---
+
+# 🎥 7. PLANET INTERACTION
+
+## Hover:
+
+* Glow effect
+* Slight rotation
+
+## Click:
+
+* Smooth camera zoom (GSAP)
+* Transition animation (blur + depth)
+* Open content panel
+
+---
+
+# 🤖 8. ASTRONAUT GUIDE SYSTEM
+
+## Character:
+
+* Cute cartoon astronaut boy (main mascot)
+
+## Responsibilities:
+
+* Welcome user
+* Guide navigation
+* Explain sections
+* Act as AI assistant
+
+## Features:
+
+* Chat UI
+* Predefined responses
+* Optional AI integration (OpenAI API)
+
+## Example:
+
+User clicks project → astronaut explains project in simple terms
+
+---
+
+# ⚡ 9. ANIMATION SYSTEM
+
+## Required Animations:
+
+* Camera zoom into planets
+* Orbit movement
+* Floating astronaut animation
+* Star field animation
+* Hover micro-interactions
+* Smooth page transitions
+
+## Tools:
+
+* GSAP (mandatory)
+* React Three Fiber animations
+
+---
+
+# 🎮 10. GAMIFICATION (OPTIONAL BUT HIGH IMPACT)
+
+* Missions:
+
+  * Explore Projects
+  * View Experience
+* Achievements:
+
+  * “Visited Nokia Experience”
+* Explore toggle button
+
+---
+
+# 🎨 11. UI DESIGN SYSTEM
+
+## Theme:
+
+* Space + AI futuristic
+
+## Colors:
+
+* Dark background (#0B0F1A)
+* Neon blue / purple accents
+* Soft glow highlights
+
+## Components:
+
+* Glassmorphism panels
+* Floating buttons
+* Chat assistant UI
+* Animated cards
+
+---
+
+# 🧠 12. CONTENT STRUCTURE
+
+## About:
+
+* Introduction
+* Education
+* Founder journey
+
+## Skills:
+
+* AI / LLM / RAG
+* Web development
+* Android development
+* Cloud
+
+## Experience:
+
+* Nokia (AI + RAG chatbot)
+* Intel Unnati (Android app)
+* Pixadora (Founder)
+* NayePankh Foundation
+
+## Projects:
+
+* Medicare
+* DevMatch
+* RideEase
+* MindfulVista
+
+## Contact:
+
+* Email
+* LinkedIn
+* GitHub
+
+---
+
+# 🧠 13. ADVANCED FEATURES (HIGH VALUE)
+
+## AI Resume Explainer
+
+User asks:
+“Explain your experience”
+→ AI responds using resume data
+
+---
+
+## Auto Demo Mode
+
+If user idle:
+→ Astronaut gives guided tour
+
+---
+
+## Recruiter Mode
+
+* Clean UI version
+* Fast navigation
+* Minimal animations
+
+---
+
+## Interactive Skill Visualization
+
+* Skills as floating particles
+* Size = expertise
+
+---
+
+# ⚙️ 14. TECH STACK
+
+## Frontend:
+
+* Next.js (App Router)
+* Tailwind CSS
+
+## 3D:
+
+* Three.js
+* React Three Fiber
+* Drei
+
+## Animation:
+
+* GSAP
+* Framer Motion
+
+## AI:
+
+* OpenAI API / Gemini
+
+---
+
+# 🧩 15. PROJECT STRUCTURE
+
+src/
+├── components/
+│   ├── AstronautGuide
+│   ├── Planet
+│   ├── Navbar
+│   ├── UIOverlay
+│
+├── scenes/
+│   ├── SpaceScene
+│   ├── PlanetScene
+│
+├── animations/
+│   ├── cameraTransitions.js
+│
+├── ai/
+│   ├── chatbot.js
+│
+├── data/
+│   ├── content.json
+│
+├── hooks/
+│   ├── useCameraControls
+│
+├── utils/
+│   ├── performance.js
+
+---
+
+# 🚀 16. PERFORMANCE STRATEGY
+
+* Use low-poly models
+* Lazy load 3D assets
+* Optimize textures
+* Limit active animations
+* Use suspense loading fallback
+
+---
+
+# 🚫 17. CONSTRAINTS
+
+* Must load within 3–5 seconds
+* Must work on mid-range laptops
+* Must have mobile fallback (2D version)
+
+---
+
+# 💣 18. EXTRA “WOW” IDEAS
+
+* Cursor-based star movement
+* Background music toggle
+* Planet sound effects
+* Dynamic theme switch
+* Easter egg hidden project
+
+---
+
+# 🧠 19. FINAL EXPERIENCE GOAL
+
+User reaction should be:
+“This is the most impressive portfolio I’ve seen.”
+
+---
+
+# ✅ 20. DEVELOPMENT PHASES
+
+## Phase 1
+
+* Setup Next.js project
+* Basic UI layout
+
+## Phase 2
+
+* Add 3D scene (space + planets)
+
+## Phase 3
+
+* Add interactions (hover, click)
+
+## Phase 4
+
+* Add GSAP animations
+
+## Phase 5
+
+* Add astronaut guide system
+
+## Phase 6
+
+* Add AI chatbot
+
+## Phase 7
+
+* Optimize performance
+
+---
+
+# 🎯 FINAL INSTRUCTION FOR COPILOT
+
+Focus on:
+
+* Clean architecture
+* Modular components
+* Smooth animations
+* Maintainable code
+
+Avoid:
+
+* Overcomplicated logic
+* Heavy assets
+* Poor UX
+
+---
+
+END OF DOCUMENT

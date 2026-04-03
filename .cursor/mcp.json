@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "nokia-rain-tool": {
+      "command": "node",
+      "args": [
+        "c:\\Users\\omsaxena\\.cursor\\extensions\\nokia.nokia-rain-tool-1.0.0\\out\\mcp-server.js"
+      ],
+      "env": {
+        "RAIN_URL": "https://dev.rain.int.net.nokia.com",
+        "RAIN_TENANT_ID": "",
+        "RAIN_CLIENT_ID": "",
+        "RAIN_MAX_LOG_LINES": "300",
+        "RAIN_DEFAULT_SEVERITY": "ERROR|FATAL|WARNING",
+        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+      }
+    }
+  }
+}
